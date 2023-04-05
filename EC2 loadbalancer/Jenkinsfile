@@ -1,0 +1,19 @@
+pipeline {
+    agent {label 'terraform'}
+
+    stages {
+        stage ('vcs') {
+            steps {
+                git url: 'https://github.com/swathipasham7/terraform-workspace.git',
+                    branch 'main'
+            }
+        }
+        stage ('build') {
+            steps {
+                """terraform init
+                terraform apply"""
+            }
+        }
+    }
+}
+
