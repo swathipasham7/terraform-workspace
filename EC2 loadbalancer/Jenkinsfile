@@ -1,12 +1,12 @@
 pipeline {
     agent {label 'terraform'}
-
     stages {
         stage('vcs'){
             steps{
-                sh
-                """git clone https://github.com/swathipasham7/terraform-workspace.git
+                sh """
+                   git clone https://github.com/swathipasham7/terraform-workspace.git
                    cd terraform-workspace/
+                   cd EC2 loadbalancer/
                    terraform init
                    terraform apply -auto-approve
                 """
