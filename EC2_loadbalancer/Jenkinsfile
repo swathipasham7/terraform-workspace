@@ -13,7 +13,7 @@ pipeline {
                       terraform init
                       terraform apply -var-file ./dev.tfvars -auto-approve
                       sudo chmod +X script.sh
-                      sh./script.sh"""
+                      sh ./EC2_loadbalancer/script.sh"""
             }
         }
     }
