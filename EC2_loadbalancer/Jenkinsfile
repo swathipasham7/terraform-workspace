@@ -6,7 +6,7 @@ pipeline {
                 sh """
                    git clone https://github.com/swathipasham7/terraform-workspace.git
                    cd terraform-workspace/
-                   cd EC2 loadbalancer/
+                   cd EC2_loadbalancer/
                    terraform init
                    terraform apply -auto-approve
                 """
