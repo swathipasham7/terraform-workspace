@@ -10,8 +10,8 @@ pipeline {
         }
         stage ('build') {
             steps {
-                """terraform init
-                terraform apply"""
+                sh """terraform init
+                terraform apply -auto-approve"""
             }
         }
     }
